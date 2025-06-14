@@ -1,9 +1,13 @@
 import multer from 'multer';
 import { join } from 'path';
+// import { existsSync, mkdirSync } from 'fs';
 
+// const fullDir = join(__dirname, '../../frontend/images/full');
+// if (!existsSync(fullDir)) {
+//   mkdirSync(fullDir, { recursive: true });
+// }
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    //cb(null, join(__dirname, '../../src/images/full'));
        cb(null, join(__dirname, '../../frontend/images/full'));
   },
   filename: (req, file, cb) => {

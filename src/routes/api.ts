@@ -12,13 +12,11 @@ console.log("aaaaaaaaaaaaaaaa  "+ imageDir);
     if (err) {
       return res.status(500).json({ error: "Failed to read image folder" });
     }
-
-    // رجّع فقط الصور بصيغة JPG أو JPEG
     const images = files.filter(f =>
       f.endsWith(".jpg") || f.endsWith(".jpeg")
     );
 
-    res.json(images); // ← هذه هي JSON المتوقعة
+    res.json(images); 
   });
 });
 
