@@ -46,10 +46,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Image Processor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
@@ -58,7 +58,7 @@
     <section class="upload-section">
       <h2>Upload New Image</h2>
       <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="imageUpload" name="image" accept="image/jpeg" required>
+        <input type="file" id="imageUpload" name="image" accept="image/jpeg" required />
         <button type="submit">Upload</button>
         <div id="uploadMessage"></div>
       </form>
@@ -75,13 +75,15 @@
         <select id="imageSelect" required>
           <option value="">Select an image</option>
         </select>
-        <input type="number" id="widthInput" placeholder="Width" min="1" required>
-        <input type="number" id="heightInput" placeholder="Height" min="1" required>
+        <input type="number" id="widthInput" placeholder="Width" min="1" required />
+        <input type="number" id="heightInput" placeholder="Height" min="1" required />
         <button type="submit">Resize</button>
       </form>
       <div id="resizeResult"></div>
     </section>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+

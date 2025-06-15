@@ -141,7 +141,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   await populateImageSelect();
 });
 
-// Upload form handler
 const uploadForm = document.getElementById('uploadForm');
 if (uploadForm) {
   uploadForm.addEventListener('submit', async (e) => {
@@ -170,8 +169,6 @@ if (uploadForm) {
 
       if (response.ok) {
         messageDiv.textContent = 'Image uploaded successfully!';
-
-        // Add new image to gallery immediately
         const uploadedImage = result.filename || fileInput.files[0].name;
         const gallery = document.getElementById('imageGallery');
 
@@ -179,7 +176,7 @@ if (uploadForm) {
           const wrapper = document.createElement('div');
           wrapper.className = 'gallery-item';
           wrapper.innerHTML = `
-            <img src="/images/${uploadedImage}" alt="${uploadedImage}">
+            <img src="/uploads/${uploadedImage}" alt="${uploadedImage}">
             <p>${uploadedImage}</p>
           `;
           gallery.appendChild(wrapper);
@@ -197,7 +194,6 @@ if (uploadForm) {
   });
 }
 
-// Resize handler
 const resizeForm = document.getElementById('resizeForm');
 if (resizeForm) {
   resizeForm.addEventListener('submit', async (e) => {
@@ -241,7 +237,6 @@ if (resizeForm) {
   });
 }
 
-// Load image gallery
 async function loadImageGallery() {
   const gallery = document.getElementById('imageGallery');
   if (!gallery) return;
@@ -252,7 +247,7 @@ async function loadImageGallery() {
 
     gallery.innerHTML = images.map((img) => `
       <div class="gallery-item">
-        <img src="/images/${img}" alt="${img}">
+        <img src="/uploads/${img}" alt="${img}">
         <p>${img}</p>
       </div>
     `).join('');
@@ -262,13 +257,12 @@ async function loadImageGallery() {
   }
 }
 
-// Populate image select dropdown
 async function populateImageSelect() {
   const select = document.getElementById('imageSelect');
   if (!select) return;
 
   try {
-    const response = await fetch('api/images/list');
+    const response = await fetch('/api/images/list');
     const images = await response.json();
 
     const placeholder = select.options[0]?.value === '' ? 1 : 0;
