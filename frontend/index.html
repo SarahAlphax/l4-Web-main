@@ -43,47 +43,64 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Image Processor</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <div class="container">
-    <h1>Image Processor</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Processor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Processor</h1>
 
-    <section class="upload-section">
-      <h2>Upload New Image</h2>
-      <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="imageUpload" name="image" accept="image/jpeg" required />
-        <button type="submit">Upload</button>
-        <div id="uploadMessage"></div>
-      </form>
-    </section>
+      <section class="upload-section">
+        <h2>Upload New Image</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+          <input
+            type="file"
+            id="imageUpload"
+            name="image"
+            accept="image/jpeg"
+            required
+          />
+          <button type="submit">Upload</button>
+          <div id="uploadMessage"></div>
+        </form>
+      </section>
 
-    <section class="gallery-section">
-      <h2>Image Gallery</h2>
-      <div id="imageGallery" class="gallery"></div>
-    </section>
+      <section class="gallery-section">
+        <h2>Image Gallery</h2>
+        <div id="imageGallery" class="gallery"></div>
+      </section>
 
-    <section class="resize-section">
-      <h2>Resize Image</h2>
-      <form id="resizeForm">
-        <select id="imageSelect" required>
-          <option value="">Select an image</option>
-        </select>
-        <input type="number" id="widthInput" placeholder="Width" min="1" required />
-        <input type="number" id="heightInput" placeholder="Height" min="1" required />
-        <button type="submit">Resize</button>
-      </form>
-      <div id="resizeResult"></div>
-    </section>
-  </div>
+      <section class="resize-section">
+        <h2>Resize Image</h2>
+        <form id="resizeForm">
+          <select id="imageSelect" required>
+            <option value="">Select an image</option>
+          </select>
+          <input
+            type="number"
+            id="widthInput"
+            placeholder="Width"
+            min="1"
+            required
+          />
+          <input
+            type="number"
+            id="heightInput"
+            placeholder="Height"
+            min="1"
+            required
+          />
+          <button type="submit">Resize</button>
+        </form>
+        <div id="resizeResult"></div>
+      </section>
+    </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-

@@ -19,12 +19,10 @@ app.use("/api", apiRoutes);
 
 app.use(
   "/uploads",
-  express.static(path.resolve(__dirname, "../frontend/images/full"))
+  express.static(path.resolve(__dirname, "../frontend/images/full")),
 );
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 export default app;
-
-

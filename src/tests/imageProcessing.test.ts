@@ -9,7 +9,7 @@ describe("Image Processing", () => {
   const outputPath = join(
     __dirname,
     "../../frontend/images/thumb",
-    `${filename}-${width}x${height}.jpg`
+    `${filename}-${width}x${height}.jpg`,
   );
 
   // Clean up before and after tests

@@ -1,25 +1,23 @@
-import express from 'express';
-import imageRoutes from './images';
+import express from "express";
+import imageRoutes from "./images";
 import fs from "fs";
 import path from "path";
 
 const router = express.Router();
-router.use('/images', imageRoutes);
+router.use("/images", imageRoutes);
 router.get("/images/list", (req, res) => {
   const imageDir = path.resolve(__dirname, "../../frontend/images/full");
-console.log("aaaaaaaaaaaaaaaa  "+ imageDir);
+  console.log("aaaaaaaaaaaaaaaa  " + imageDir);
   fs.readdir(imageDir, (err, files) => {
     if (err) {
       return res.status(500).json({ error: "Failed to read image folder" });
     }
-    const images = files.filter(f =>
-      f.endsWith(".jpg") || f.endsWith(".jpeg")
+    const images = files.filter(
+      (f) => f.endsWith(".jpg") || f.endsWith(".jpeg"),
     );
 
-    res.json(images); 
+    res.json(images);
   });
 });
-
-
 
 export default router;

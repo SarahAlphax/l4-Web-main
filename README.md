@@ -21,6 +21,7 @@ An API for resizing images and managing an image gallery.
 ### API Endpoints
 
 - `GET /api/images/resize?filename={name}&width={num}&height={num}`
+
   - Resizes the specified image to the given dimensions
   - Returns a URL to the resized image
 
@@ -41,6 +42,7 @@ Access the frontend at `http://localhost:3000`
 Run tests with: `npm test`
 
 Tests include:
+
 - Image processing functionality
 - API endpoints
 
