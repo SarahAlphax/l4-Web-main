@@ -9,7 +9,7 @@
     "build": "tsc",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "jasmine"
+    "test": "npm run build && npx jasmine --config=jasmine.json"
   },
   "dependencies": {
     "express": "^4.18.2",
